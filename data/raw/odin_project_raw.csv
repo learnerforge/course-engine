@@ -1,0 +1,10 @@
+raw_id,provider_id,provider_name,source_url,raw_title,raw_url,raw_description,raw_category,raw_subcategory,raw_tags,raw_duration,raw_level,raw_language,raw_certificate_info,raw_badge_info,raw_price_info,raw_rating,raw_reviews_count,raw_enrollment_count,raw_image_url,raw_instructors,raw_json,scraped_at,status,error_message
+odin_foundations,odin_project,The Odin Project,https://www.theodinproject.com/paths,Foundations Course,https://www.theodinproject.com/paths/foundations,,Web Development,Foundations,Web Development;Full Stack,,beginner,English,,,free,,,,,,"{""path"": ""/paths/foundations""}",2026-05-23 14:04:05,active,
+odin_full-stack-javascript,odin_project,The Odin Project,https://www.theodinproject.com/paths,Full Stack JavaScript,https://www.theodinproject.com/paths/full-stack-javascript,"
+  Start learning for free now!
+  Sign up
+",Web Development,Full Stack Javascript,Web Development;Full Stack,,beginner,English,,,free,,,,,,"{""path"": ""/paths/full-stack-javascript""}",2026-05-23 14:04:05,active,
+odin_full-stack-ruby-on-rails,odin_project,The Odin Project,https://www.theodinproject.com/paths,Full Stack Ruby on Rails,https://www.theodinproject.com/paths/full-stack-ruby-on-rails,"
+  Start learning for free now!
+  Sign up
+",Web Development,Full Stack Ruby On Rails,Web Development;Full Stack,,beginner,English,,,free,,,,,,"{""path"": ""/paths/full-stack-ruby-on-rails""}",2026-05-23 14:04:05,active,

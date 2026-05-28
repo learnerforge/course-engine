@@ -1,0 +1,734 @@
+# Course Data Engine — Source Registry
+# Generated: 2026-05-23
+# Methods: API+key, API/pub, sitemap, scrape, github, hybrid, static, listing
+# Status:  working | experimental | zero_courses | timeout_risk | blocked | needs_api_ky
+
+sources:
+  # ================================================================
+  # WORKING — courses successfully ingested
+  # ================================================================
+  - key: freecodecamp
+    label: freeCodeCamp
+    method: github
+    status: working
+    count: 8979   # after dedup & 404 cleanup
+    notes: "20 verified-working superblocks, 99% URL pass rate. See _refetch_fcc.py"
+
+  - key: nptel
+    label: NPTEL
+    method: API/pub
+    status: working
+    count: 3353
+    notes: "31 disciplines resolved via Nuxt __data.json double-indirection"
+
+  - key: mitocw
+    label: MIT_OCW
+    method: sitemap
+    status: working
+    count: 2574
+    notes: "Categories mostly 'General' — discipline number mapping incomplete"
+
+  - key: microsoft_learn
+    label: Microsoft Learn
+    method: API/pub
+    status: working
+    count: 4788
+    notes: "Tracking params stripped from URLs"
+
+  - key: docker_docs
+    label: Docker Docs
+    method: sitemap
+    status: working
+    count: 1658
+
+  - key: hyperskill
+    label: Hyperskill (JetBrains Academy)
+    method: sitemap
+    status: working
+    count: 457
+
+  - key: exercism
+    label: Exercism
+    method: API/pub
+    status: working
+    count: 82
+
+  - key: codelabs
+    label: Google Codelabs
+    method: sitemap
+    status: working
+    count: 219
+
+  - key: netacad
+    label: Cisco Networking Academy
+    method: sitemap
+    status: working
+    count: 71
+
+  - key: cognitiveclass
+    label: CognitiveClass (IBM)
+    method: sitemap
+    status: working
+    count: 652
+
+  - key: codecademy
+    label: Codecademy
+    method: sitemap
+    status: working
+    count: 956
+
+  - key: educative
+    label: Educative
+    method: sitemap
+    status: working
+    count: 177
+
+  - key: deeplearning_ai
+    label: DeepLearning.AI
+    method: sitemap
+    status: working
+    count: 135
+
+  - key: frontend_masters
+    label: Frontend Masters
+    method: sitemap
+    status: working
+    count: 471
+
+  - key: atlassian_university
+    label: Atlassian University
+    method: sitemap
+    status: working
+    count: 16
+
+  - key: nextjs_learn
+    label: Next.js Learn
+    method: sitemap
+    status: working
+    count: 112
+
+  - key: flutter_learn
+    label: Flutter Learn
+    method: sitemap
+    status: working
+    count: 19
+
+  - key: laravel_learn
+    label: Laravel Learn
+    method: sitemap
+    status: working
+    count: 25
+
+  - key: stepik
+    label: Stepik
+    method: sitemap
+    status: working
+    count: 14669
+
+  - key: kodekloud
+    label: KodeKloud
+    method: sitemap
+    status: working
+    count: 21
+
+  # ================================================================
+  # WORKING — zero_courses (scrapers written, 0 results)
+  # ================================================================
+  - key: cmu_oli
+    label: CMU OLI
+    method: sitemap
+    status: zero_courses
+    notes: "Scraper ran but found 0 courses — check sitemap structure"
+
+  - key: coddy
+    label: Coddy
+    method: scrape
+    status: zero_courses
+
+  - key: cs50
+    label: CS50
+    method: scrape
+    status: zero_courses
+
+  - key: fullstackopen
+    label: Full Stack Open
+    method: scrape
+    status: zero_courses
+
+  - key: helsinki_python
+    label: Helsinki Python MOOC
+    method: scrape
+    status: zero_courses
+
+  - key: mdn
+    label: MDN Web Docs
+    method: scrape
+    status: zero_courses
+
+  - key: trailhead
+    label: Trailhead (Salesforce)
+    method: sitemap
+    status: zero_courses
+
+  - key: webdev
+    label: Web.dev
+    method: scrape
+    status: zero_courses
+
+  # ================================================================
+  # WORKING — scrapers written but need debugging (CSV count = 0)
+  # ================================================================
+  - key: adhdecode
+    label: ADHDecode
+    method: scrape
+    status: working
+    count: 0
+
+  - key: android_developers
+    label: Android Developers
+    method: sitemap
+    status: working
+    count: 0
+
+  - key: atlassian_university
+    label: Atlassian University
+    method: scrape
+    status: working
+    count: 0
+
+  - key: bccampus
+    label: BCcampus OpenEd
+    method: sitemap
+    status: working
+    count: 0
+
+  - key: cisco_skills
+    label: Cisco Skills For All
+    method: sitemap
+    status: working
+    count: 71
+
+  - key: elastic_training
+    label: Elastic Training
+    method: scrape
+    status: working
+    count: 0
+
+  - key: fastai
+    label: Fast.ai
+    method: scrape
+    status: working
+    count: 0
+
+  - key: fortinet
+    label: Fortinet NSE Training
+    method: scrape
+    status: working
+    count: 0
+
+  - key: htb_academy
+    label: HTB Academy
+    method: scrape
+    status: working
+    count: 0
+
+  - key: huggingface
+    label: HuggingFace Learn
+    method: scrape
+    status: working
+    count: 0
+
+  - key: juniper
+    label: Juniper Learning Portal
+    method: static
+    status: working
+    count: 0
+
+  - key: libretexts
+    label: LibreTexts
+    method: scrape
+    status: working
+    count: 0
+
+  - key: merlot
+    label: MERLOT
+    method: scrape
+    status: working
+    count: 0
+
+  - key: mongodb_university
+    label: MongoDB University
+    method: sitemap
+    status: working
+    count: 0
+
+  - key: nand2tetris
+    label: nand2tetris
+    method: static
+    status: working
+    count: 0
+
+  - key: neo4j
+    label: Neo4j GraphAcademy
+    method: scrape
+    status: working
+    count: 0
+
+  - key: odin_project
+    label: The Odin Project
+    method: scrape
+    status: working
+    count: 3
+
+  - key: openstax
+    label: OpenStax
+    method: API/pub
+    status: working
+    count: 0
+
+  - key: oracle_education
+    label: Oracle Education
+    method: sitemap
+    status: working
+    count: 985
+
+  - key: oracle_learn
+    label: Oracle Learning Explorer
+    method: sitemap
+    status: working
+    count: 985
+
+  - key: portswigger
+    label: PortSwigger
+    method: scrape
+    status: working
+    count: 0
+
+  - key: professor_messer
+    label: Professor Messer
+    method: scrape
+    status: working
+    count: 0
+
+  - key: raspberrypi
+    label: Raspberry Pi Foundation
+    method: scrape
+    status: working
+    count: 0
+
+  - key: redhat
+    label: Red Hat Developer
+    method: sitemap
+    status: working
+    count: 0
+
+  - key: saylor
+    label: Saylor Academy
+    method: scrape
+    status: working
+    count: 0
+
+  - key: securityelites
+    label: SecurityElites
+    method: scrape
+    status: working
+    count: 0
+
+  - key: stacklesson
+    label: StackLesson
+    method: scrape
+    status: working
+    count: 0
+
+  - key: stanford_explore
+    label: Stanford ExploreCourses
+    method: API/pub
+    status: working
+    count: 0
+
+  - key: tryhackme
+    label: TryHackMe
+    method: static
+    status: working
+    count: 0
+
+  - key: ucb_extension
+    label: UC Berkeley Extension
+    method: sitemap
+    status: working
+    count: 0
+
+  - key: w3schools
+    label: W3Schools
+    method: static
+    status: working
+    count: 0
+
+  # ================================================================
+  # TIMEOUT RISK — slow/broken scrapers
+  # ================================================================
+  - key: swayam
+    label: SWAYAM
+    method: API/pub
+    status: timeout_risk
+
+  - key: sap
+    label: SAP Learning
+    method: sitemap
+    status: timeout_risk
+
+  # ================================================================
+  # BLOCKED — robots.txt or CAPTCHA
+  # ================================================================
+  - key: oer_commons
+    label: OER Commons
+    method: hybrid
+    status: blocked
+    notes: "Blocked by robots.txt or CAPTCHA"
+
+  # ================================================================
+  # NEEDS API KEY
+  # ================================================================
+  - key: youtube
+    label: YouTube
+    method: API+key
+    status: needs_api_ky
+    notes: "Requires YouTube Data API key"
+
+  # ================================================================
+  # EXPERIMENTAL — YAML-based sources (sitemap)
+  # ================================================================
+  - key: yaml:angular_docs
+    label: Angular Docs
+    method: sitemap
+    status: experimental
+
+  - key: yaml:ansible_documentation
+    label: Ansible Documentation
+    method: listing
+    status: experimental
+
+  - key: yaml:apple_developer_tutorials
+    label: Apple Developer Tutorials
+    method: sitemap
+    status: experimental
+
+  - key: yaml:auth0_blog
+    label: Auth0 Blog
+    method: sitemap
+    status: experimental
+
+  - key: yaml:cisco_networking_academy
+    label: Cisco Networking Academy
+    method: sitemap
+    status: experimental
+
+  - key: yaml:cloud_academy
+    label: Cloud Academy
+    method: sitemap
+    status: experimental
+
+  - key: yaml:cloudflare_developers
+    label: Cloudflare Developers
+    method: sitemap
+    status: experimental
+
+  - key: yaml:cloudflare_learning_center
+    label: Cloudflare Learning Center
+    method: sitemap
+    status: blocked
+
+  - key: yaml:codecademy
+    label: Codecademy
+    method: sitemap
+    status: experimental
+
+  - key: yaml:coursera
+    label: Coursera
+    method: sitemap
+    status: blocked
+
+  - key: yaml:css-tricks
+    label: CSS-Tricks
+    method: sitemap
+    status: experimental
+
+  - key: yaml:databricks_docs
+    label: Databricks Docs
+    method: sitemap
+    status: experimental
+
+  - key: yaml:deeplearning.ai
+    label: DeepLearning.AI
+    method: sitemap
+    status: experimental
+
+  - key: yaml:deno_docs
+    label: Deno Docs
+    method: sitemap
+    status: experimental
+
+  - key: yaml:dev.to
+    label: Dev.to
+    method: listing
+    status: experimental
+
+  - key: yaml:digitalocean_community
+    label: DigitalOcean Community
+    method: sitemap
+    status: blocked
+
+  - key: yaml:disasterready
+    label: DisasterReady
+    method: sitemap
+    status: blocked
+
+  - key: yaml:django_docs
+    label: Django Docs
+    method: sitemap
+    status: experimental
+
+  - key: yaml:educative
+    label: Educative
+    method: sitemap
+    status: experimental
+
+  - key: yaml:edx
+    label: edX
+    method: listing
+    status: experimental
+
+  - key: yaml:egghead
+    label: Egghead
+    method: sitemap
+    status: experimental
+
+  - key: yaml:elastic_docs
+    label: Elastic Docs
+    method: sitemap
+    status: experimental
+
+  - key: yaml:flutter_docs
+    label: Flutter Docs
+    method: sitemap
+    status: experimental
+
+  - key: yaml:frontend_masters
+    label: Frontend Masters
+    method: sitemap
+    status: experimental
+
+  - key: yaml:geeksforgeeks
+    label: GeeksforGeeks
+    method: listing
+    status: experimental
+
+  - key: yaml:gitlab_docs
+    label: GitLab Docs
+    method: sitemap
+    status: experimental
+
+  - key: yaml:go_by_example
+    label: Go by Example
+    method: listing
+    status: experimental
+
+  - key: yaml:google_ai_education
+    label: Google AI Education
+    method: sitemap
+    status: experimental
+
+  - key: yaml:guru99
+    label: Guru99
+    method: sitemap
+    status: experimental
+
+  - key: yaml:hashicorp_developer
+    label: HashiCorp Developer
+    method: sitemap
+    status: experimental
+
+  - key: yaml:hp_life
+    label: HP LIFE
+    method: listing
+    status: experimental
+
+  - key: yaml:ibm_skillsbuild
+    label: IBM SkillsBuild
+    method: sitemap
+    status: blocked
+
+  - key: yaml:interviewbit
+    label: InterviewBit
+    method: listing
+    status: experimental
+
+  - key: yaml:kaggle_learn
+    label: Kaggle Learn
+    method: listing
+    status: experimental
+
+  - key: yaml:kotlin_docs
+    label: Kotlin Docs
+    method: sitemap
+    status: experimental
+
+  - key: yaml:kubernetes_training
+    label: Kubernetes Training
+    method: sitemap
+    status: experimental
+
+  - key: yaml:laravel_docs
+    label: Laravel Docs
+    method: sitemap
+    status: experimental
+
+  - key: yaml:learn_x_in_y_minutes
+    label: Learn X in Y Minutes
+    method: listing
+    status: experimental
+
+  - key: yaml:linode_docs
+    label: Linode Docs
+    method: sitemap
+    status: experimental
+
+  - key: yaml:linux_foundation_training
+    label: Linux Foundation Training
+    method: sitemap
+    status: timeout_risk
+
+  - key: yaml:logrocket_blog
+    label: LogRocket Blog
+    method: sitemap
+    status: experimental
+
+  - key: yaml:mdn_web_docs_advanced
+    label: MDN Web Docs Advanced
+    method: sitemap
+    status: experimental
+
+  - key: yaml:next.js_docs
+    label: Next.js Docs
+    method: sitemap
+    status: experimental
+
+  - key: yaml:nginx_docs
+    label: NGINX Docs
+    method: sitemap
+    status: experimental
+
+  - key: yaml:pluralsight
+    label: Pluralsight
+    method: sitemap
+    status: experimental
+
+  - key: yaml:postgresql_docs
+    label: PostgreSQL Docs
+    method: sitemap
+    status: experimental
+
+  - key: yaml:programiz
+    label: Programiz
+    method: sitemap
+    status: experimental
+
+  - key: yaml:python_official_docs
+    label: Python Official Docs
+    method: sitemap
+    status: experimental
+
+  - key: yaml:pytorch_tutorials
+    label: PyTorch Tutorials
+    method: sitemap
+    status: experimental
+
+  - key: yaml:real_python
+    label: Real Python
+    method: sitemap
+    status: experimental
+
+  - key: yaml:redis_docs
+    label: Redis Docs
+    method: sitemap
+    status: experimental
+
+  - key: yaml:roadmap.sh
+    label: Roadmap.sh
+    method: listing
+    status: experimental
+
+  - key: yaml:rust_book
+    label: Rust Book
+    method: listing
+    status: experimental
+
+  - key: yaml:scaler_topics
+    label: Scaler Topics
+    method: listing
+    status: experimental
+
+  - key: yaml:scrimba
+    label: Scrimba
+    method: sitemap
+    status: experimental
+
+  - key: yaml:smashing_magazine
+    label: Smashing Magazine
+    method: sitemap
+    status: experimental
+
+  - key: yaml:snowflake_docs
+    label: Snowflake Docs
+    method: sitemap
+    status: experimental
+
+  - key: yaml:sololearn
+    label: Sololearn
+    method: listing
+    status: experimental
+
+  - key: yaml:supabase_docs
+    label: Supabase Docs
+    method: sitemap
+    status: experimental
+
+  - key: yaml:tensorflow_tutorials
+    label: TensorFlow Tutorials
+    method: sitemap
+    status: experimental
+
+  - key: yaml:tutorialspoint
+    label: TutorialsPoint
+    method: sitemap
+    status: experimental
+
+  - key: yaml:twilio_blog
+    label: Twilio Blog
+    method: sitemap
+    status: experimental
+
+  - key: yaml:ubuntu_tutorials
+    label: Ubuntu Tutorials
+    method: sitemap
+    status: experimental
+
+  - key: yaml:unitar_e-learning
+    label: UNITAR e-Learning
+    method: sitemap
+    status: experimental
+
+  - key: yaml:vercel_docs
+    label: Vercel Docs
+    method: sitemap
+    status: experimental
+
+  - key: yaml:vue.js_docs
+    label: Vue.js Docs
+    method: sitemap
+    status: experimental
+
+  - key: yaml:w3docs
+    label: W3Docs
+    method: sitemap
+    status: experimental

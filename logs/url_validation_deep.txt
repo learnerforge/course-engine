@@ -1,0 +1,25 @@
+Deep URL Validation Report
+Total: 2853/3061 (93.2%)
+
+atlassian_university: 100.0% (16/16) content=0%
+codecademy: 100.0% (200/200) content=0%
+codelabs: 99.5% (199/200) content=0%
+cognitiveclass: 100.0% (200/200) content=8%
+deeplearning_ai: 100.0% (135/135) content=100%
+docker_docs: 100.0% (200/200) content=0%
+educative: 100.0% (177/177) content=0%
+exercism: 100.0% (82/82) content=0%
+flutter_learn: 100.0% (19/19) content=0%
+freecodecamp: 100.0% (200/200) content=0%
+frontend_masters: 99.5% (199/200) content=98%
+hyperskill: 100.0% (200/200) content=0%
+kodekloud: 100.0% (21/21) content=0%
+laravel_learn: 100.0% (25/25) content=0%
+microsoft_learn: 0.0% (0/200) content=0%
+mit_ocw: 100.0% (200/200) content=100%
+netacad: 100.0% (71/71) content=0%
+nextjs_learn: 100.0% (112/112) content=0%
+nptel: 100.0% (200/200) content=100%
+odin_project: 100.0% (3/3) content=0%
+oracle_learn: 100.0% (200/200) content=0%
+stepik: 97.0% (194/200) content=26%
