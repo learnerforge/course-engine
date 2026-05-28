@@ -1,5 +1,0 @@
-run_id,provider_id,provider_name,started_at,ended_at,duration_seconds,status,pages_scanned,urls_discovered,raw_records_found,valid_records_saved,duplicate_records_found,skipped_records,error_count,robots_allowed,rate_limited,http_200_count,http_301_count,http_302_count,http_403_count,http_404_count,http_429_count,http_500_count,notes
-RUN001,nptel,NPTEL,2026-05-28 11:40:24,2026-05-28 11:40:24,30,success,1,3353,3353,3353,,,0,true,false,1,0,0,0,0,0,0,Public API/sitemap
-RUN002,microsoft_learn,Microsoft Learn,2026-05-28 11:40:24,2026-05-28 11:40:24,30,success,1,4738,4738,4738,,,0,true,false,1,0,0,0,0,0,0,Public API/sitemap
-RUN003,mit_ocw,MIT OpenCourseWare,2026-05-28 11:40:24,2026-05-28 11:40:24,30,success,1,2574,2574,2574,,,0,true,false,1,0,0,0,0,0,0,Public API/sitemap
-RUN004,freecodecamp,freeCodeCamp,2026-05-28 11:40:24,2026-05-28 11:40:24,30,success,1,8979,8979,8979,,,0,true,false,1,0,0,0,0,0,0,Public API/sitemap
