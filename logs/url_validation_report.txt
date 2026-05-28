@@ -1,0 +1,37 @@
+URL Validation Report — 40083 URLs
+============================================================
+atlassian_university      100.0% (16/16)
+codecademy                100.0% (956/956)
+codelabs                  100.0% (201/201)
+cognitiveclass            100.0% (652/652)
+deeplearning_ai            96.0% (48/50)
+  FAIL [500] http_500 | https://www.deeplearning.ai/courses/leanne-test-program
+  FAIL [500] http_500 | https://www.deeplearning.ai/courses/practical-data-science-specialization
+docker_docs               100.0% (1657/1657)
+educative                 100.0% (177/177)
+exercism                  100.0% (82/82)
+flutter_learn             100.0% (19/19)
+freecodecamp              100.0% (8979/8979)
+frontend_masters          100.0% (236/236)
+hyperskill                100.0% (457/457)
+kodekloud                 100.0% (21/21)
+laravel_learn             100.0% (25/25)
+microsoft_learn            99.6% (4768/4788)
+  FAIL [429] http_429 | https://learn.microsoft.com/en-us/training/paths/purview-implement-insider-risk-management/
+  FAIL [429] http_429 | https://learn.microsoft.com/en-us/training/paths/azure-linux/
+  FAIL [429] http_429 | https://learn.microsoft.com/en-us/training/paths/fsharp-first-steps/
+  FAIL [429] http_429 | https://learn.microsoft.com/en-us/training/paths/sc-200-create-detections-perform-investigations-azure-sentinel/
+  FAIL [429] http_429 | https://learn.microsoft.com/en-us/training/paths/implement-windows-server-high-availability/
+  FAIL [429] http_429 | https://learn.microsoft.com/en-us/training/paths/deploy-cloud-based-tools/
+  FAIL [429] http_429 | https://learn.microsoft.com/en-us/training/paths/sc-200-perform-threat-hunting-azure-sentinel/
+  FAIL [429] http_429 | https://learn.microsoft.com/en-us/training/paths/understand-data-concepts/
+mit_ocw                   100.0% (2574/2574)
+netacad                   100.0% (71/71)
+nextjs_learn              100.0% (112/112)
+nptel                     100.0% (3353/3353)
+odin_project              100.0% (3/3)
+oracle_learn              100.0% (985/985)
+stepik                    100.0% (14668/14669)
+  FAIL [404] http_404 | https://stepik.org/course/100243
+
+Total: 40060/40083 (99.9%)

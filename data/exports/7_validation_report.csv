@@ -1,0 +1,23 @@
+validation_id,provider_id,provider_name,total_records,valid_records,invalid_records,duplicate_records_removed,records_with_certificate,records_with_badge,records_with_both_certificate_and_badge,records_with_no_credential,records_with_skills,records_missing_title,records_missing_url,records_missing_description,records_missing_duration,records_missing_difficulty,records_missing_price_type,records_missing_credential_info,average_data_quality_score,min_data_quality_score,max_data_quality_score,last_validated_at
+VAL001,atlassian_university,atlassian_university,16,16,0,235,0,0,0,16,44,0,0,16,16,0,0,0,70.0,70,70,2026-05-28 11:40:24
+VAL002,codecademy,codecademy,956,956,0,235,0,0,0,956,2325,0,0,956,956,0,0,0,70.0,70,70,2026-05-28 11:40:24
+VAL003,codelabs,codelabs,201,201,0,235,0,0,0,201,379,0,0,201,201,0,0,0,70.0,70,70,2026-05-28 11:40:24
+VAL004,cognitiveclass,cognitiveclass,652,652,0,235,0,0,0,652,2208,0,0,652,652,0,0,0,70.0,70,70,2026-05-28 11:40:24
+VAL005,deeplearning_ai,deeplearning_ai,135,135,0,235,135,0,0,0,230,0,0,135,135,0,0,0,85.0,85,85,2026-05-28 11:40:24
+VAL006,docker_docs,docker_docs,1657,1657,0,235,0,0,0,1657,6900,0,0,1657,1657,0,0,0,70.0,70,70,2026-05-28 11:40:24
+VAL007,educative,educative,177,177,0,235,0,0,0,177,474,0,0,177,177,0,0,0,70.0,70,70,2026-05-28 11:40:24
+VAL008,exercism,exercism,82,82,0,235,0,0,0,82,127,0,0,82,82,0,0,0,70.0,70,70,2026-05-28 11:40:24
+VAL009,flutter_learn,flutter_learn,19,19,0,235,0,0,0,19,44,0,0,19,19,0,0,0,70.0,70,70,2026-05-28 11:40:24
+VAL010,freecodecamp,freeCodeCamp,8979,8979,0,235,8979,0,0,0,20424,0,0,8979,8979,0,0,0,80.0,80,80,2026-05-28 11:40:24
+VAL011,frontend_masters,frontend_masters,236,236,0,235,0,0,0,236,393,0,0,236,236,0,0,0,70.0,70,70,2026-05-28 11:40:24
+VAL012,hyperskill,hyperskill,457,457,0,235,0,0,0,457,652,0,0,457,457,0,0,0,70.0,70,70,2026-05-28 11:40:24
+VAL013,kodekloud,kodekloud,21,21,0,235,0,0,0,21,69,0,0,21,21,0,0,0,70.0,70,70,2026-05-28 11:40:24
+VAL014,laravel_learn,laravel_learn,25,25,0,235,0,0,0,25,51,0,0,25,25,0,0,0,70.0,70,70,2026-05-28 11:40:24
+VAL015,microsoft_learn,Microsoft Learn,4738,4738,0,235,183,0,0,4555,12684,0,0,183,288,0,0,0,84.8,80,85,2026-05-28 11:40:24
+VAL016,mit_ocw,MIT OpenCourseWare,2574,2574,0,235,0,0,0,2574,4880,0,0,2574,2574,0,0,0,70.0,70,70,2026-05-28 11:40:24
+VAL017,netacad,netacad,71,71,0,235,0,0,0,71,144,0,0,71,71,0,0,0,70.0,70,70,2026-05-28 11:40:24
+VAL018,nextjs_learn,nextjs_learn,112,112,0,235,0,0,0,112,352,0,0,112,112,0,0,0,70.0,70,70,2026-05-28 11:40:24
+VAL019,nptel,NPTEL,3353,3353,0,235,3353,0,0,0,7000,0,0,3353,3353,0,0,0,84.9,80,85,2026-05-28 11:40:24
+VAL020,odin_project,odin_project,3,3,0,235,0,0,0,3,9,0,0,1,3,0,0,0,80.0,70,85,2026-05-28 11:40:24
+VAL021,oracle_learn,oracle_learn,985,985,0,235,0,0,0,985,985,0,0,985,985,0,0,0,70.0,70,70,2026-05-28 11:40:24
+VAL022,stepik,stepik,14669,14669,0,235,0,0,0,14669,29338,0,0,14669,14669,0,0,0,70.0,70,70,2026-05-28 11:40:24
