@@ -34,6 +34,7 @@ PROVIDERS = [
     {"provider_id":"simplilearn","provider_name":"Simplilearn","provider_slug":"simplilearn","provider_type":"Developer Platform","website_url":"https://www.simplilearn.com","country":"India","official_api_available":"false","sitemap_available":"true","scraping_allowed":"true","certificate_supported":"true","badge_supported":"false","free_courses_available":"true","paid_courses_available":"true","trust_score":"78","priority_level":"medium","notes":"~214 professional certification courses from sitemap."},
     {"provider_id":"upgrad","provider_name":"UpGrad","provider_slug":"upgrad","provider_type":"Developer Platform","website_url":"https://www.upgrad.com","country":"India","official_api_available":"false","sitemap_available":"true","scraping_allowed":"true","certificate_supported":"true","badge_supported":"false","free_courses_available":"true","paid_courses_available":"true","trust_score":"76","priority_level":"medium","notes":"~33 courses from sitemap filtering."},
     {"provider_id":"trailhead","provider_name":"Salesforce Trailhead","provider_slug":"trailhead","provider_type":"Cloud Vendor","website_url":"https://trailhead.salesforce.com","country":"United States","official_api_available":"false","sitemap_available":"true","scraping_allowed":"true","certificate_supported":"true","badge_supported":"true","free_courses_available":"true","paid_courses_available":"false","trust_score":"85","priority_level":"high","notes":"~8000+ modules/projects/trails from content sitemap."},
+    {"provider_id":"roadmap_sh","provider_name":"Roadmap.sh","provider_slug":"roadmap-sh","provider_type":"Developer Platform","website_url":"https://roadmap.sh","country":"Global","official_api_available":"false","sitemap_available":"false","scraping_allowed":"true","certificate_supported":"false","badge_supported":"false","free_courses_available":"true","paid_courses_available":"false","trust_score":"80","priority_level":"high","notes":"~17912 curated learning resources from 86 roadmaps + 5 best-practices."},
 ]
 
 PROVIDER_MAP = {p["provider_id"]: p for p in PROVIDERS}
@@ -851,10 +852,11 @@ all_raw = {
     "simplilearn": read_raw("simplilearn_raw.csv"),
     "upgrad": read_raw("upgrad_raw.csv"),
     "trailhead": read_raw("trailhead_raw.csv"),
+    "roadmap_sh": read_raw("roadmap_sh_raw.csv"),
 }
-provs = ['nptel','mslearn','mitocw','fcc','docker','exercism','hyperskill','oracle_learn','codelabs','odin','netacad','cognitiveclass','codecademy','educative','deeplearning_ai','frontend_masters','atlassian_university','nextjs_learn','flutter_learn','laravel_learn','stepik','kodekloud','forage','datacamp','meta_coursera','tata_strive','tcs_ion','great_learning','simplilearn','upgrad','trailhead']
+provs = ['nptel','mslearn','mitocw','fcc','docker','exercism','hyperskill','oracle_learn','codelabs','odin','netacad','cognitiveclass','codecademy','educative','deeplearning_ai','frontend_masters','atlassian_university','nextjs_learn','flutter_learn','laravel_learn','stepik','kodekloud','forage','datacamp','meta_coursera','tata_strive','tcs_ion','great_learning','simplilearn','upgrad','trailhead','roadmap_sh']
 counts = [len(all_raw[k]) for k in provs]
-labels = ['NPTEL','MS','MIT','FCC','Docker','Exercism','Hyperskill','Oracle','Codelabs','Odin','NetAcad','CognitiveClass','Codecademy','Educative','DeepLearningAI','FrontendMasters','Atlassian','NextJS','Flutter','Laravel','Stepik','KodeKloud','Forage','DataCamp','Meta','TataStrive','TCSiON','GreatLearn','Simplilearn','UpGrad','Trailhead']
+labels = ['NPTEL','MS','MIT','FCC','Docker','Exercism','Hyperskill','Oracle','Codelabs','Odin','NetAcad','CognitiveClass','Codecademy','Educative','DeepLearningAI','FrontendMasters','Atlassian','NextJS','Flutter','Laravel','Stepik','KodeKloud','Forage','DataCamp','Meta','TataStrive','TCSiON','GreatLearn','Simplilearn','UpGrad','Trailhead','RoadmapSH']
 print('  '+' | '.join('{}: {}'.format(l,c) for l,c in zip(labels,counts)))
 
 courses = []
@@ -1106,6 +1108,20 @@ for row in all_raw["trailhead"]:
     cid = f"trailhead_{slug[:40]}_{abs(hash(title + row.get('raw_url',''))) % 100000000:08d}"
     cat = row.get("raw_subcategory","") or "module"
     courses.append({"course_id":cid,"provider_id":"trailhead","provider_name":"Salesforce Trailhead","title":title,"slug":slug,"url":row.get("raw_url",""),"canonical_url":row.get("raw_url",""),"description":"","category":"Salesforce & Cloud","subcategory":cat[:100],"difficulty":"beginner","duration":"","duration_hours":"","language":"English","price_type":"free","price_value":"0","currency":"USD","certificate_available":"false","badge_available":"true","credential_type":"badge","rating":"","reviews_count":"","enrollment_count":"","image_url":"","instructors":"","skills_summary":"","source_url":"https://trailhead.salesforce.com/content_sitemap.xml","discovery_method":"sitemap","last_updated":utc_now(),"scraped_at":utc_now(),"data_quality_score":"","duplicate_group_id":"","is_duplicate":"false","status":"active"})
+
+for row in all_raw["roadmap_sh"]:
+    title = clean_spaces(row.get("raw_title") or "")
+    if not title: continue
+    slug = re.sub(r"[^a-z0-9\-]", "", title.lower().replace(" ","-").replace("/","-").replace(":",""))[:100]
+    cid = f"roadmap_{slug[:40]}_{abs(hash(title + row.get('raw_url',''))) % 100000000:08d}"
+    tags_raw = row.get("raw_tags","[]")
+    try:
+        tags_list = json.loads(tags_raw) if tags_raw else []
+    except:
+        tags_list = []
+    rtype = tags_list[1] if len(tags_list) > 1 else ""
+    roadmap = tags_list[2] if len(tags_list) > 2 else ""
+    courses.append({"course_id":cid,"provider_id":"roadmap_sh","provider_name":"Roadmap.sh","title":title,"slug":slug,"url":row.get("raw_url",""),"canonical_url":row.get("raw_url",""),"description":clean_spaces(row.get("raw_description","") or "")[:5000],"category":"Learning Resource","subcategory":row.get("raw_subcategory","")[:100],"difficulty":"intermediate","duration":"","duration_hours":"","language":"English","price_type":row.get("raw_price_info","free"),"price_value":"","currency":"USD","certificate_available":"false","badge_available":"false","credential_type":"none","rating":"","reviews_count":"","enrollment_count":"","image_url":"","instructors":"","skills_summary":"","source_url":f"https://roadmap.sh/{roadmap}","discovery_method":"github_repo","last_updated":utc_now(),"scraped_at":utc_now(),"data_quality_score":"","duplicate_group_id":"","is_duplicate":"false","status":"active"})
 
 print("  Total normalized: %d" % len(courses))
 

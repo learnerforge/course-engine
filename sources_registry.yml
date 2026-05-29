@@ -711,8 +711,15 @@ sources:
     method: sitemap
     status: experimental
 
-  - key: yaml:roadmap.sh
+  - key: roadmap_sh
     label: Roadmap.sh
+    method: github
+    status: working
+    count: 17912
+    notes: "17912 curated learning resources from 86 developer roadmaps + 5 best-practices. Extracted from GitHub repo data files."
+
+  - key: yaml:roadmap.sh
+    label: Roadmap.sh (YAML placeholder)
     method: listing
     status: experimental
 
