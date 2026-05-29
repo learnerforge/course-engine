@@ -862,7 +862,7 @@ for row in all_raw["nptel"]:
     title = clean_spaces(row.get("raw_title") or "")
     if not title: continue
     slug = re.sub(r"[^a-z0-9\-]", "", title.lower().replace(" ","-").replace("/","-").replace(":",""))[:100]
-    cid = f"nptel_{slug[:40]}_{hash(title)%10000:04d}"
+    cid = f"nptel_{slug[:40]}_{abs(hash(title + row.get('raw_url',''))) % 100000000:08d}"
     cat = clean_spaces(row.get("raw_category","") or "Engineering")
     courses.append({"course_id":cid,"provider_id":"nptel","provider_name":"NPTEL","title":title,"slug":slug,"url":row.get("raw_url",""),"canonical_url":row.get("raw_url",""),"description":"","category":cat,"subcategory":row.get("raw_subcategory",""),"difficulty":"intermediate","duration":"","duration_hours":"","language":"English","price_type":"free","price_value":"0","currency":"INR","certificate_available":"true","badge_available":"false","credential_type":"certificate","rating":"","reviews_count":"","enrollment_count":"","image_url":"","instructors":row.get("raw_instructors",""),"skills_summary":"","source_url":"https://nptel.ac.in/courses/__data.json","discovery_method":"api","last_updated":utc_now(),"scraped_at":utc_now(),"data_quality_score":"","duplicate_group_id":"","is_duplicate":"false","status":"active"})
 
@@ -870,7 +870,7 @@ for row in all_raw["mslearn"]:
     title = clean_spaces(row.get("raw_title") or "")
     if not title: continue
     slug = re.sub(r"[^a-z0-9\-]", "", title.lower().replace(" ","-").replace("/","-").replace(":",""))[:100]
-    cid = f"mslearn_{slug[:40]}_{hash(title)%10000:04d}"
+    cid = f"mslearn_{slug[:40]}_{abs(hash(title + row.get('raw_url',''))) % 100000000:08d}"
     diff = row.get("raw_level","unknown")
     cert_type = "certificate_and_badge" if row.get("raw_certificate_info") and row.get("raw_badge_info") else ("certificate" if row.get("raw_certificate_info") else ("badge" if row.get("raw_badge_info") else "none"))
     courses.append({"course_id":cid,"provider_id":"microsoft_learn","provider_name":"Microsoft Learn","title":title,"slug":slug,"url":row.get("raw_url",""),"canonical_url":row.get("raw_url",""),"description":clean_spaces(row.get("raw_description") or "")[:5000],"category":clean_spaces(row.get("raw_category","")),"subcategory":clean_spaces(row.get("raw_subcategory","")),"difficulty":diff,"duration":row.get("raw_duration",""),"duration_hours":"","language":"English","price_type":row.get("raw_price_info","free"),"price_value":"","currency":"USD","certificate_available":"true" if cert_type in ("certificate","certificate_and_badge") else "false","badge_available":"true" if cert_type in ("badge","certificate_and_badge") else "false","credential_type":cert_type,"rating":row.get("raw_rating",""),"reviews_count":"","enrollment_count":"","image_url":"","instructors":"","skills_summary":"","source_url":"https://learn.microsoft.com/api/catalog/","discovery_method":"api","last_updated":utc_now(),"scraped_at":utc_now(),"data_quality_score":"","duplicate_group_id":"","is_duplicate":"false","status":"active"})
@@ -879,7 +879,7 @@ for row in all_raw["mitocw"]:
     title = clean_spaces(row.get("raw_title") or "")
     if not title: continue
     slug = re.sub(r"[^a-z0-9\-]", "", title.lower().replace(" ","-").replace("/","-").replace(":",""))[:100]
-    cid = f"mitocw_{slug[:40]}_{hash(title)%10000:04d}"
+    cid = f"mitocw_{slug[:40]}_{abs(hash(title + row.get('raw_url',''))) % 100000000:08d}"
     cat = clean_spaces(row.get("raw_category","") or "General")
     courses.append({"course_id":cid,"provider_id":"mit_ocw","provider_name":"MIT OpenCourseWare","title":title,"slug":slug,"url":row.get("raw_url",""),"canonical_url":row.get("raw_url",""),"description":"","category":cat,"subcategory":"","difficulty":"advanced","duration":"","duration_hours":"","language":"English","price_type":"free","price_value":"0","currency":"USD","certificate_available":"false","badge_available":"false","credential_type":"none","rating":"","reviews_count":"","enrollment_count":"","image_url":"","instructors":"","skills_summary":"","source_url":"https://ocw.mit.edu/sitemap.xml","discovery_method":"sitemap","last_updated":utc_now(),"scraped_at":utc_now(),"data_quality_score":"","duplicate_group_id":"","is_duplicate":"false","status":"active"})
 
@@ -887,7 +887,7 @@ for row in all_raw["fcc"]:
     title = clean_spaces(row.get("raw_title") or "")
     if not title: continue
     slug = re.sub(r"[^a-z0-9\-]", "", title.lower().replace(" ","-").replace("/","-").replace(":",""))[:100]
-    cid = f"fcc_{slug[:40]}_{hash(title)%10000:04d}"
+    cid = f"fcc_{slug[:40]}_{abs(hash(title + row.get('raw_url',''))) % 100000000:08d}"
     cert = row.get("raw_certificate_info","")
     courses.append({"course_id":cid,"provider_id":"freecodecamp","provider_name":"freeCodeCamp","title":title,"slug":slug,"url":row.get("raw_url",""),"canonical_url":row.get("raw_url",""),"description":"","category":row.get("raw_category",""),"subcategory":row.get("raw_subcategory",""),"difficulty":"beginner","duration":"","duration_hours":"","language":"English","price_type":"free","price_value":"0","currency":"USD","certificate_available":"true" if cert else "false","badge_available":"false","credential_type":"certificate" if cert else "none","rating":"","reviews_count":"","enrollment_count":"","image_url":"","instructors":"","skills_summary":"","source_url":"https://curriculum-db.freecodecamp.org/graphql","discovery_method":"api","last_updated":utc_now(),"scraped_at":utc_now(),"data_quality_score":"","duplicate_group_id":"","is_duplicate":"false","status":"active"})
 
@@ -895,133 +895,133 @@ for row in all_raw["docker"]:
     title = clean_spaces(row.get("raw_title") or "")
     if not title: continue
     slug = re.sub(r"[^a-z0-9\-]", "", title.lower().replace(" ","-").replace("/","-").replace(":",""))[:100]
-    cid = f"docker_{slug[:40]}_{hash(title)%10000:04d}"
+    cid = f"docker_{slug[:40]}_{abs(hash(title + row.get('raw_url',''))) % 100000000:08d}"
     courses.append({"course_id":cid,"provider_id":"docker_docs","provider_name":"Docker Docs","title":title,"slug":slug,"url":row.get("raw_url",""),"canonical_url":row.get("raw_url",""),"description":"","category":"DevOps","subcategory":"Docker","difficulty":"intermediate","duration":"","duration_hours":"","language":"English","price_type":"free","price_value":"0","currency":"USD","certificate_available":"false","badge_available":"false","credential_type":"none","rating":"","reviews_count":"","enrollment_count":"","image_url":"","instructors":"","skills_summary":"","source_url":"https://docs.docker.com/sitemap.xml","discovery_method":"sitemap","last_updated":utc_now(),"scraped_at":utc_now(),"data_quality_score":"","duplicate_group_id":"","is_duplicate":"false","status":"active"})
 
 for row in all_raw["exercism"]:
     title = clean_spaces(row.get("raw_title") or "")
     if not title: continue
     slug = re.sub(r"[^a-z0-9\-]", "", title.lower().replace(" ","-").replace("/","-").replace(":",""))[:100]
-    cid = f"exercism_{slug[:40]}_{hash(title)%10000:04d}"
+    cid = f"exercism_{slug[:40]}_{abs(hash(title + row.get('raw_url',''))) % 100000000:08d}"
     courses.append({"course_id":cid,"provider_id":"exercism","provider_name":"Exercism","title":title,"slug":slug,"url":row.get("raw_url",""),"canonical_url":row.get("raw_url",""),"description":(row.get("raw_description") or "")[:5000],"category":"Programming","subcategory":row.get("raw_subcategory",""),"difficulty":"beginner","duration":"","duration_hours":"","language":"English","price_type":"free","price_value":"0","currency":"USD","certificate_available":"false","badge_available":"false","credential_type":"none","rating":"","reviews_count":"","enrollment_count":"","image_url":"","instructors":"","skills_summary":"","source_url":"https://exercism.org/api/v2/tracks","discovery_method":"api","last_updated":utc_now(),"scraped_at":utc_now(),"data_quality_score":"","duplicate_group_id":"","is_duplicate":"false","status":"active"})
 
 for row in all_raw["hyperskill"]:
     title = clean_spaces(row.get("raw_title") or "")
     if not title: continue
     slug = re.sub(r"[^a-z0-9\-]", "", title.lower().replace(" ","-").replace("/","-").replace(":",""))[:100]
-    cid = f"hyperskill_{slug[:40]}_{hash(title)%10000:04d}"
+    cid = f"hyperskill_{slug[:40]}_{abs(hash(title + row.get('raw_url',''))) % 100000000:08d}"
     courses.append({"course_id":cid,"provider_id":"hyperskill","provider_name":"Hyperskill (JetBrains Academy)","title":title,"slug":slug,"url":row.get("raw_url",""),"canonical_url":row.get("raw_url",""),"description":"","category":"Programming","subcategory":"","difficulty":"intermediate","duration":"","duration_hours":"","language":"English","price_type":"free","price_value":"0","currency":"USD","certificate_available":"false","badge_available":"false","credential_type":"none","rating":"","reviews_count":"","enrollment_count":"","image_url":"","instructors":"","skills_summary":"","source_url":"https://hyperskill.org/sitemap.xml","discovery_method":"sitemap","last_updated":utc_now(),"scraped_at":utc_now(),"data_quality_score":"","duplicate_group_id":"","is_duplicate":"false","status":"active"})
 
 for row in all_raw["oracle_learn"]:
     title = clean_spaces(row.get("raw_title") or "")
     if not title: continue
     slug = re.sub(r"[^a-z0-9\-]", "", title.lower().replace(" ","-").replace("/","-").replace(":",""))[:100]
-    cid = f"oracle_{slug[:40]}_{hash(title)%10000:04d}"
+    cid = f"oracle_{slug[:40]}_{abs(hash(title + row.get('raw_url',''))) % 100000000:08d}"
     courses.append({"course_id":cid,"provider_id":"oracle_learn","provider_name":"Oracle Learning Explorer","title":title,"slug":slug,"url":row.get("raw_url",""),"canonical_url":row.get("raw_url",""),"description":"","category":"Cloud Computing","subcategory":"","difficulty":"intermediate","duration":"","duration_hours":"","language":"English","price_type":"free","price_value":"0","currency":"USD","certificate_available":"false","badge_available":"false","credential_type":"none","rating":"","reviews_count":"","enrollment_count":"","image_url":"","instructors":"","skills_summary":"","source_url":"https://learn.oracle.com/sitemap.xml","discovery_method":"sitemap","last_updated":utc_now(),"scraped_at":utc_now(),"data_quality_score":"","duplicate_group_id":"","is_duplicate":"false","status":"active"})
 
 for row in all_raw["codelabs"]:
     title = clean_spaces(row.get("raw_title") or "")
     if not title: continue
     slug = re.sub(r"[^a-z0-9\-]", "", title.lower().replace(" ","-").replace("/","-").replace(":",""))[:100]
-    cid = f"codelabs_{slug[:40]}_{hash(title)%10000:04d}"
+    cid = f"codelabs_{slug[:40]}_{abs(hash(title + row.get('raw_url',''))) % 100000000:08d}"
     courses.append({"course_id":cid,"provider_id":"codelabs","provider_name":"Google Codelabs","title":title,"slug":slug,"url":row.get("raw_url",""),"canonical_url":row.get("raw_url",""),"description":"","category":row.get("raw_category","") or "Cloud Computing","subcategory":"","difficulty":"intermediate","duration":"","duration_hours":"","language":"English","price_type":"free","price_value":"0","currency":"USD","certificate_available":"false","badge_available":"false","credential_type":"none","rating":"","reviews_count":"","enrollment_count":"","image_url":"","instructors":"","skills_summary":"","source_url":"https://codelabs.developers.google.com/sitemap.xml","discovery_method":"sitemap","last_updated":utc_now(),"scraped_at":utc_now(),"data_quality_score":"","duplicate_group_id":"","is_duplicate":"false","status":"active"})
 
 for row in all_raw["odin"]:
     title = clean_spaces(row.get("raw_title") or "")
     if not title: continue
     slug = re.sub(r"[^a-z0-9\-]", "", title.lower().replace(" ","-").replace("/","-").replace(":",""))[:100]
-    cid = f"odin_{slug[:40]}_{hash(title)%10000:04d}"
+    cid = f"odin_{slug[:40]}_{abs(hash(title + row.get('raw_url',''))) % 100000000:08d}"
     courses.append({"course_id":cid,"provider_id":"odin_project","provider_name":"The Odin Project","title":title,"slug":slug,"url":row.get("raw_url",""),"canonical_url":row.get("raw_url",""),"description":(row.get("raw_description") or "")[:5000],"category":"Web Development","subcategory":row.get("raw_subcategory",""),"difficulty":"beginner","duration":"","duration_hours":"","language":"English","price_type":"free","price_value":"0","currency":"USD","certificate_available":"false","badge_available":"false","credential_type":"none","rating":"","reviews_count":"","enrollment_count":"","image_url":"","instructors":"","skills_summary":"","source_url":"https://www.theodinproject.com/paths","discovery_method":"scrape","last_updated":utc_now(),"scraped_at":utc_now(),"data_quality_score":"","duplicate_group_id":"","is_duplicate":"false","status":"active"})
 
 for row in all_raw["netacad"]:
     title = clean_spaces(row.get("raw_title") or "")
     if not title: continue
     slug = re.sub(r"[^a-z0-9\-]", "", title.lower().replace(" ","-").replace("/","-").replace(":",""))[:100]
-    cid = f"netacad_{slug[:40]}_{hash(title)%10000:04d}"
+    cid = f"netacad_{slug[:40]}_{abs(hash(title + row.get('raw_url',''))) % 100000000:08d}"
     courses.append({"course_id":cid,"provider_id":"netacad","provider_name":"Cisco Networking Academy","title":title,"slug":slug,"url":row.get("raw_url",""),"canonical_url":row.get("raw_url",""),"description":"","category":"Networking","subcategory":"","difficulty":"intermediate","duration":"","duration_hours":"","language":"English","price_type":"free","price_value":"0","currency":"USD","certificate_available":"false","badge_available":"false","credential_type":"none","rating":"","reviews_count":"","enrollment_count":"","image_url":"","instructors":"","skills_summary":"","source_url":"https://www.netacad.com/sitemap.xml","discovery_method":"sitemap","last_updated":utc_now(),"scraped_at":utc_now(),"data_quality_score":"","duplicate_group_id":"","is_duplicate":"false","status":"active"})
 
 for row in all_raw["cognitiveclass"]:
     title = clean_spaces(row.get("raw_title") or "")
     if not title: continue
     slug = re.sub(r"[^a-z0-9\-]", "", title.lower().replace(" ","-").replace("/","-").replace(":",""))[:100]
-    cid = f"cognitiveclass_{slug[:40]}_{hash(title)%10000:04d}"
+    cid = f"cognitiveclass_{slug[:40]}_{abs(hash(title + row.get('raw_url',''))) % 100000000:08d}"
     courses.append({"course_id":cid,"provider_id":"cognitiveclass","provider_name":"CognitiveClass (IBM)","title":title,"slug":slug,"url":row.get("raw_url",""),"canonical_url":row.get("raw_url",""),"description":"","category":"Data Science","subcategory":"","difficulty":"intermediate","duration":"","duration_hours":"","language":"English","price_type":"free","price_value":"0","currency":"USD","certificate_available":"false","badge_available":"false","credential_type":"none","rating":"","reviews_count":"","enrollment_count":"","image_url":"","instructors":"","skills_summary":"","source_url":"https://cognitiveclass.ai/sitemap.xml","discovery_method":"sitemap","last_updated":utc_now(),"scraped_at":utc_now(),"data_quality_score":"","duplicate_group_id":"","is_duplicate":"false","status":"active"})
 
 for row in all_raw["codecademy"]:
     title = clean_spaces(row.get("raw_title") or "")
     if not title: continue
     slug = re.sub(r"[^a-z0-9\-]", "", title.lower().replace(" ","-").replace("/","-").replace(":",""))[:100]
-    cid = f"codecademy_{slug[:40]}_{hash(title)%10000:04d}"
+    cid = f"codecademy_{slug[:40]}_{abs(hash(title + row.get('raw_url',''))) % 100000000:08d}"
     courses.append({"course_id":cid,"provider_id":"codecademy","provider_name":"Codecademy","title":title,"slug":slug,"url":row.get("raw_url",""),"canonical_url":row.get("raw_url",""),"description":"","category":"Programming","subcategory":"","difficulty":"beginner","duration":"","duration_hours":"","language":"English","price_type":"free","price_value":"0","currency":"USD","certificate_available":"false","badge_available":"false","credential_type":"none","rating":"","reviews_count":"","enrollment_count":"","image_url":"","instructors":"","skills_summary":"","source_url":"https://www.codecademy.com/sitemap.xml","discovery_method":"sitemap","last_updated":utc_now(),"scraped_at":utc_now(),"data_quality_score":"","duplicate_group_id":"","is_duplicate":"false","status":"active"})
 
 for row in all_raw["educative"]:
     title = clean_spaces(row.get("raw_title") or "")
     if not title: continue
     slug = re.sub(r"[^a-z0-9\-]", "", title.lower().replace(" ","-").replace("/","-").replace(":",""))[:100]
-    cid = f"educative_{slug[:40]}_{hash(title)%10000:04d}"
+    cid = f"educative_{slug[:40]}_{abs(hash(title + row.get('raw_url',''))) % 100000000:08d}"
     courses.append({"course_id":cid,"provider_id":"educative","provider_name":"Educative","title":title,"slug":slug,"url":row.get("raw_url",""),"canonical_url":row.get("raw_url",""),"description":"","category":"Programming","subcategory":"","difficulty":"intermediate","duration":"","duration_hours":"","language":"English","price_type":"paid","price_value":"","currency":"USD","certificate_available":"false","badge_available":"false","credential_type":"none","rating":"","reviews_count":"","enrollment_count":"","image_url":"","instructors":"","skills_summary":"","source_url":"https://www.educative.io/sitemap.xml","discovery_method":"sitemap","last_updated":utc_now(),"scraped_at":utc_now(),"data_quality_score":"","duplicate_group_id":"","is_duplicate":"false","status":"active"})
 
 for row in all_raw["deeplearning_ai"]:
     title = clean_spaces(row.get("raw_title") or "")
     if not title: continue
     slug = re.sub(r"[^a-z0-9\-]", "", title.lower().replace(" ","-").replace("/","-").replace(":",""))[:100]
-    cid = f"deeplearning_ai_{slug[:40]}_{hash(title)%10000:04d}"
+    cid = f"deeplearning_ai_{slug[:40]}_{abs(hash(title + row.get('raw_url',''))) % 100000000:08d}"
     courses.append({"course_id":cid,"provider_id":"deeplearning_ai","provider_name":"DeepLearning.AI","title":title,"slug":slug,"url":row.get("raw_url",""),"canonical_url":row.get("raw_url",""),"description":"","category":"AI & ML","subcategory":"","difficulty":"intermediate","duration":"","duration_hours":"","language":"English","price_type":"paid","price_value":"","currency":"USD","certificate_available":"true","badge_available":"false","credential_type":"certificate","rating":"","reviews_count":"","enrollment_count":"","image_url":"","instructors":"Andrew Ng","skills_summary":"","source_url":"https://www.deeplearning.ai/sitemap.xml","discovery_method":"sitemap","last_updated":utc_now(),"scraped_at":utc_now(),"data_quality_score":"","duplicate_group_id":"","is_duplicate":"false","status":"active"})
 
 for row in all_raw["frontend_masters"]:
     title = clean_spaces(row.get("raw_title") or "")
     if not title: continue
     slug = re.sub(r"[^a-z0-9\-]", "", title.lower().replace(" ","-").replace("/","-").replace(":",""))[:100]
-    cid = f"frontendmasters_{slug[:40]}_{hash(title)%10000:04d}"
+    cid = f"frontendmasters_{slug[:40]}_{abs(hash(title + row.get('raw_url',''))) % 100000000:08d}"
     courses.append({"course_id":cid,"provider_id":"frontend_masters","provider_name":"Frontend Masters","title":title,"slug":slug,"url":row.get("raw_url",""),"canonical_url":row.get("raw_url",""),"description":"","category":"Web Development","subcategory":"","difficulty":"intermediate","duration":"","duration_hours":"","language":"English","price_type":"paid","price_value":"","currency":"USD","certificate_available":"false","badge_available":"false","credential_type":"none","rating":"","reviews_count":"","enrollment_count":"","image_url":"","instructors":"","skills_summary":"","source_url":"https://frontendmasters.com/sitemap.xml","discovery_method":"sitemap","last_updated":utc_now(),"scraped_at":utc_now(),"data_quality_score":"","duplicate_group_id":"","is_duplicate":"false","status":"active"})
 
 for row in all_raw["atlassian_university"]:
     title = clean_spaces(row.get("raw_title") or "")
     if not title: continue
     slug = re.sub(r"[^a-z0-9\-]", "", title.lower().replace(" ","-").replace("/","-").replace(":",""))[:100]
-    cid = f"atlassian_{slug[:40]}_{hash(title)%10000:04d}"
+    cid = f"atlassian_{slug[:40]}_{abs(hash(title + row.get('raw_url',''))) % 100000000:08d}"
     courses.append({"course_id":cid,"provider_id":"atlassian_university","provider_name":"Atlassian University","title":title,"slug":slug,"url":row.get("raw_url",""),"canonical_url":row.get("raw_url",""),"description":"","category":"DevOps","subcategory":"","difficulty":"beginner","duration":"","duration_hours":"","language":"English","price_type":"free","price_value":"0","currency":"USD","certificate_available":"false","badge_available":"false","credential_type":"none","rating":"","reviews_count":"","enrollment_count":"","image_url":"","instructors":"","skills_summary":"","source_url":"https://university.atlassian.com/sitemap.xml","discovery_method":"sitemap","last_updated":utc_now(),"scraped_at":utc_now(),"data_quality_score":"","duplicate_group_id":"","is_duplicate":"false","status":"active"})
 
 for row in all_raw["nextjs_learn"]:
     title = clean_spaces(row.get("raw_title") or "")
     if not title: continue
     slug = re.sub(r"[^a-z0-9\-]", "", title.lower().replace(" ","-").replace("/","-").replace(":",""))[:100]
-    cid = f"nextjs_{slug[:40]}_{hash(title)%10000:04d}"
+    cid = f"nextjs_{slug[:40]}_{abs(hash(title + row.get('raw_url',''))) % 100000000:08d}"
     courses.append({"course_id":cid,"provider_id":"nextjs_learn","provider_name":"Next.js Learn","title":title,"slug":slug,"url":row.get("raw_url",""),"canonical_url":row.get("raw_url",""),"description":"","category":"Web Development","subcategory":"React","difficulty":"intermediate","duration":"","duration_hours":"","language":"English","price_type":"free","price_value":"0","currency":"USD","certificate_available":"false","badge_available":"false","credential_type":"none","rating":"","reviews_count":"","enrollment_count":"","image_url":"","instructors":"","skills_summary":"","source_url":"https://nextjs.org/sitemap.xml","discovery_method":"sitemap","last_updated":utc_now(),"scraped_at":utc_now(),"data_quality_score":"","duplicate_group_id":"","is_duplicate":"false","status":"active"})
 
 for row in all_raw["flutter_learn"]:
     title = clean_spaces(row.get("raw_title") or "")
     if not title: continue
     slug = re.sub(r"[^a-z0-9\-]", "", title.lower().replace(" ","-").replace("/","-").replace(":",""))[:100]
-    cid = f"flutter_{slug[:40]}_{hash(title)%10000:04d}"
+    cid = f"flutter_{slug[:40]}_{abs(hash(title + row.get('raw_url',''))) % 100000000:08d}"
     courses.append({"course_id":cid,"provider_id":"flutter_learn","provider_name":"Flutter Learn","title":title,"slug":slug,"url":row.get("raw_url",""),"canonical_url":row.get("raw_url",""),"description":"","category":"Mobile Development","subcategory":"Flutter","difficulty":"intermediate","duration":"","duration_hours":"","language":"English","price_type":"free","price_value":"0","currency":"USD","certificate_available":"false","badge_available":"false","credential_type":"none","rating":"","reviews_count":"","enrollment_count":"","image_url":"","instructors":"","skills_summary":"","source_url":"https://docs.flutter.dev/sitemap.xml","discovery_method":"sitemap","last_updated":utc_now(),"scraped_at":utc_now(),"data_quality_score":"","duplicate_group_id":"","is_duplicate":"false","status":"active"})
 
 for row in all_raw["laravel_learn"]:
     title = clean_spaces(row.get("raw_title") or "")
     if not title: continue
     slug = re.sub(r"[^a-z0-9\-]", "", title.lower().replace(" ","-").replace("/","-").replace(":",""))[:100]
-    cid = f"laravel_{slug[:40]}_{hash(title)%10000:04d}"
+    cid = f"laravel_{slug[:40]}_{abs(hash(title + row.get('raw_url',''))) % 100000000:08d}"
     courses.append({"course_id":cid,"provider_id":"laravel_learn","provider_name":"Laravel Learn","title":title,"slug":slug,"url":row.get("raw_url",""),"canonical_url":row.get("raw_url",""),"description":"","category":"Web Development","subcategory":"PHP","difficulty":"intermediate","duration":"","duration_hours":"","language":"English","price_type":"free","price_value":"0","currency":"USD","certificate_available":"false","badge_available":"false","credential_type":"none","rating":"","reviews_count":"","enrollment_count":"","image_url":"","instructors":"","skills_summary":"","source_url":"https://laravel.com/sitemap.xml","discovery_method":"sitemap","last_updated":utc_now(),"scraped_at":utc_now(),"data_quality_score":"","duplicate_group_id":"","is_duplicate":"false","status":"active"})
 
 for row in all_raw["stepik"]:
     title = clean_spaces(row.get("raw_title") or "")
     if not title: continue
     slug = re.sub(r"[^a-z0-9\-]", "", title.lower().replace(" ","-").replace("/","-").replace(":",""))[:100]
-    cid = f"stepik_{slug[:40]}_{hash(title)%10000:04d}"
+    cid = f"stepik_{slug[:40]}_{abs(hash(title + row.get('raw_url',''))) % 100000000:08d}"
     courses.append({"course_id":cid,"provider_id":"stepik","provider_name":"Stepik","title":title,"slug":slug,"url":row.get("raw_url",""),"canonical_url":row.get("raw_url",""),"description":"","category":"Programming","subcategory":"","difficulty":"intermediate","duration":"","duration_hours":"","language":"English","price_type":"free","price_value":"0","currency":"USD","certificate_available":"false","badge_available":"false","credential_type":"none","rating":"","reviews_count":"","enrollment_count":"","image_url":"","instructors":"","skills_summary":"","source_url":"https://stepik.org/sitemap.xml","discovery_method":"sitemap","last_updated":utc_now(),"scraped_at":utc_now(),"data_quality_score":"","duplicate_group_id":"","is_duplicate":"false","status":"active"})
 
 for row in all_raw["kodekloud"]:
     title = clean_spaces(row.get("raw_title") or "")
     if not title: continue
     slug = re.sub(r"[^a-z0-9\-]", "", title.lower().replace(" ","-").replace("/","-").replace(":",""))[:100]
-    cid = f"kodekloud_{slug[:40]}_{hash(title)%10000:04d}"
+    cid = f"kodekloud_{slug[:40]}_{abs(hash(title + row.get('raw_url',''))) % 100000000:08d}"
     courses.append({"course_id":cid,"provider_id":"kodekloud","provider_name":"KodeKloud","title":title,"slug":slug,"url":row.get("raw_url",""),"canonical_url":row.get("raw_url",""),"description":"","category":"DevOps","subcategory":"","difficulty":"intermediate","duration":"","duration_hours":"","language":"English","price_type":"paid","price_value":"","currency":"USD","certificate_available":"false","badge_available":"false","credential_type":"none","rating":"","reviews_count":"","enrollment_count":"","image_url":"","instructors":"","skills_summary":"","source_url":"https://kodekloud.com/sitemap.xml","discovery_method":"sitemap","last_updated":utc_now(),"scraped_at":utc_now(),"data_quality_score":"","duplicate_group_id":"","is_duplicate":"false","status":"active"})
 
 for row in all_raw["forage"]:
     title = clean_spaces(row.get("raw_title") or "")
     if not title: continue
     slug = re.sub(r"[^a-z0-9\-]", "", title.lower().replace(" ","-").replace("/","-").replace(":",""))[:100]
-    cid = f"forage_{slug[:40]}_{hash(title)%10000:04d}"
+    cid = f"forage_{slug[:40]}_{abs(hash(title + row.get('raw_url',''))) % 100000000:08d}"
     tags_raw = row.get("raw_tags","[]")
     try:
         tags_list = json.loads(tags_raw) if tags_raw else []
@@ -1033,7 +1033,7 @@ for row in all_raw["datacamp"]:
     title = clean_spaces(row.get("raw_title") or "")
     if not title: continue
     slug = re.sub(r"[^a-z0-9\-]", "", title.lower().replace(" ","-").replace("/","-").replace(":",""))[:100]
-    cid = f"datacamp_{slug[:40]}_{hash(title)%10000:04d}"
+    cid = f"datacamp_{slug[:40]}_{abs(hash(title + row.get('raw_url',''))) % 100000000:08d}"
     raw_tags = row.get("raw_tags","[]")
     try:
         tags_list = json.loads(raw_tags) if raw_tags else []
@@ -1058,7 +1058,7 @@ for row in all_raw["meta_coursera"]:
     title = clean_spaces(row.get("raw_title") or "")
     if not title: continue
     slug = re.sub(r"[^a-z0-9\-]", "", title.lower().replace(" ","-").replace("/","-").replace(":",""))[:100]
-    cid = f"meta_coursera_{slug[:40]}_{hash(title)%10000:04d}"
+    cid = f"meta_coursera_{slug[:40]}_{abs(hash(title + row.get('raw_url',''))) % 100000000:08d}"
     cert_info = (row.get("raw_certificate_info","") or "").lower()
     ct = "none"
     if "certificate" in cert_info: ct = "certificate"
@@ -1068,42 +1068,42 @@ for row in all_raw["tata_strive"]:
     title = clean_spaces(row.get("raw_title") or "")
     if not title: continue
     slug = re.sub(r"[^a-z0-9\-]", "", title.lower().replace(" ","-").replace("/","-").replace(":",""))[:100]
-    cid = f"tata_strive_{slug[:40]}_{hash(title)%10000:04d}"
+    cid = f"tata_strive_{slug[:40]}_{abs(hash(title + row.get('raw_url',''))) % 100000000:08d}"
     courses.append({"course_id":cid,"provider_id":"tata_strive","provider_name":"Tata STRIVE","title":title,"slug":slug,"url":row.get("raw_url",""),"canonical_url":row.get("raw_url",""),"description":clean_spaces(row.get("raw_description","") or "")[:5000],"category":"Job Skills","subcategory":"","difficulty":"beginner","duration":row.get("raw_duration",""),"duration_hours":"","language":"English","price_type":"free","price_value":"0","currency":"INR","certificate_available":"true","badge_available":"false","credential_type":"certificate","rating":"","reviews_count":"","enrollment_count":"","image_url":"","instructors":"","skills_summary":"","source_url":"https://tatastrive.com/what-we-do/courses/","discovery_method":"html_scrape","last_updated":utc_now(),"scraped_at":utc_now(),"data_quality_score":"","duplicate_group_id":"","is_duplicate":"false","status":"active"})
 
 for row in all_raw["tcs_ion"]:
     title = clean_spaces(row.get("raw_title") or "")
     if not title: continue
     slug = re.sub(r"[^a-z0-9\-]", "", title.lower().replace(" ","-").replace("/","-").replace(":",""))[:100]
-    cid = f"tcsion_{slug[:40]}_{hash(title)%10000:04d}"
+    cid = f"tcsion_{slug[:40]}_{abs(hash(title + row.get('raw_url',''))) % 100000000:08d}"
     courses.append({"course_id":cid,"provider_id":"tcs_ion","provider_name":"TCS iON","title":title,"slug":slug,"url":row.get("raw_url",""),"canonical_url":row.get("raw_url",""),"description":"","category":"Professional Skills","subcategory":"","difficulty":"intermediate","duration":"","duration_hours":"","language":"English, Hindi","price_type":"freemium","price_value":"","currency":"INR","certificate_available":"true","badge_available":"false","credential_type":"certificate","rating":"","reviews_count":"","enrollment_count":"","image_url":"","instructors":"","skills_summary":"","source_url":"https://www.tcsion.com/sitemap.xml","discovery_method":"sitemap","last_updated":utc_now(),"scraped_at":utc_now(),"data_quality_score":"","duplicate_group_id":"","is_duplicate":"false","status":"active"})
 
 for row in all_raw["great_learning"]:
     title = clean_spaces(row.get("raw_title") or "")
     if not title: continue
     slug = re.sub(r"[^a-z0-9\-]", "", title.lower().replace(" ","-").replace("/","-").replace(":",""))[:100]
-    cid = f"greatlearning_{slug[:40]}_{hash(title)%10000:04d}"
+    cid = f"greatlearning_{slug[:40]}_{abs(hash(title + row.get('raw_url',''))) % 100000000:08d}"
     courses.append({"course_id":cid,"provider_id":"great_learning","provider_name":"Great Learning","title":title,"slug":slug,"url":row.get("raw_url",""),"canonical_url":row.get("raw_url",""),"description":"","category":"Data Science & Tech","subcategory":"","difficulty":"intermediate","duration":"","duration_hours":"","language":"English","price_type":"free","price_value":"0","currency":"INR","certificate_available":"true","badge_available":"false","credential_type":"certificate","rating":"","reviews_count":"","enrollment_count":"","image_url":"","instructors":"","skills_summary":"","source_url":"https://www.mygreatlearning.com/gl_academy_sitemap.xml","discovery_method":"sitemap","last_updated":utc_now(),"scraped_at":utc_now(),"data_quality_score":"","duplicate_group_id":"","is_duplicate":"false","status":"active"})
 
 for row in all_raw["simplilearn"]:
     title = clean_spaces(row.get("raw_title") or "")
     if not title: continue
     slug = re.sub(r"[^a-z0-9\-]", "", title.lower().replace(" ","-").replace("/","-").replace(":",""))[:100]
-    cid = f"simplilearn_{slug[:40]}_{hash(title)%10000:04d}"
+    cid = f"simplilearn_{slug[:40]}_{abs(hash(title + row.get('raw_url',''))) % 100000000:08d}"
     courses.append({"course_id":cid,"provider_id":"simplilearn","provider_name":"Simplilearn","title":title,"slug":slug,"url":row.get("raw_url",""),"canonical_url":row.get("raw_url",""),"description":"","category":"Professional Certification","subcategory":"","difficulty":"intermediate","duration":"","duration_hours":"","language":"English","price_type":"paid","price_value":"","currency":"USD","certificate_available":"true","badge_available":"false","credential_type":"certificate","rating":"","reviews_count":"","enrollment_count":"","image_url":"","instructors":"","skills_summary":"","source_url":"https://www.simplilearn.com/sitemap.xml","discovery_method":"sitemap","last_updated":utc_now(),"scraped_at":utc_now(),"data_quality_score":"","duplicate_group_id":"","is_duplicate":"false","status":"active"})
 
 for row in all_raw["upgrad"]:
     title = clean_spaces(row.get("raw_title") or "")
     if not title: continue
     slug = re.sub(r"[^a-z0-9\-]", "", title.lower().replace(" ","-").replace("/","-").replace(":",""))[:100]
-    cid = f"upgrad_{slug[:40]}_{hash(title)%10000:04d}"
+    cid = f"upgrad_{slug[:40]}_{abs(hash(title + row.get('raw_url',''))) % 100000000:08d}"
     courses.append({"course_id":cid,"provider_id":"upgrad","provider_name":"UpGrad","title":title,"slug":slug,"url":row.get("raw_url",""),"canonical_url":row.get("raw_url",""),"description":"","category":"Professional Certification","subcategory":"","difficulty":"intermediate","duration":"","duration_hours":"","language":"English","price_type":"paid","price_value":"","currency":"INR","certificate_available":"true","badge_available":"false","credential_type":"certificate","rating":"","reviews_count":"","enrollment_count":"","image_url":"","instructors":"","skills_summary":"","source_url":"https://www.upgrad.com/sitemap.xml","discovery_method":"sitemap","last_updated":utc_now(),"scraped_at":utc_now(),"data_quality_score":"","duplicate_group_id":"","is_duplicate":"false","status":"active"})
 
 for row in all_raw["trailhead"]:
     title = clean_spaces(row.get("raw_title") or "")
     if not title: continue
     slug = re.sub(r"[^a-z0-9\-]", "", title.lower().replace(" ","-").replace("/","-").replace(":",""))[:100]
-    cid = f"trailhead_{slug[:40]}_{hash(title)%10000:04d}"
+    cid = f"trailhead_{slug[:40]}_{abs(hash(title + row.get('raw_url',''))) % 100000000:08d}"
     cat = row.get("raw_subcategory","") or "module"
     courses.append({"course_id":cid,"provider_id":"trailhead","provider_name":"Salesforce Trailhead","title":title,"slug":slug,"url":row.get("raw_url",""),"canonical_url":row.get("raw_url",""),"description":"","category":"Salesforce & Cloud","subcategory":cat[:100],"difficulty":"beginner","duration":"","duration_hours":"","language":"English","price_type":"free","price_value":"0","currency":"USD","certificate_available":"false","badge_available":"true","credential_type":"badge","rating":"","reviews_count":"","enrollment_count":"","image_url":"","instructors":"","skills_summary":"","source_url":"https://trailhead.salesforce.com/content_sitemap.xml","discovery_method":"sitemap","last_updated":utc_now(),"scraped_at":utc_now(),"data_quality_score":"","duplicate_group_id":"","is_duplicate":"false","status":"active"})
 

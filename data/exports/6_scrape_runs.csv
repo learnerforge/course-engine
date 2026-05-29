@@ -1,14 +1,14 @@
 run_id,provider_id,provider_name,started_at,ended_at,duration_seconds,status,pages_scanned,urls_discovered,raw_records_found,valid_records_saved,duplicate_records_found,skipped_records,error_count,robots_allowed,rate_limited,http_200_count,http_301_count,http_302_count,http_403_count,http_404_count,http_429_count,http_500_count,notes
-RUN001,nptel,NPTEL,2026-05-29 06:15:10,2026-05-29 06:15:10,30,success,1,3488,3488,3488,,,0,true,false,1,0,0,0,0,0,0,Public API/sitemap
-RUN002,microsoft_learn,Microsoft Learn,2026-05-29 06:15:10,2026-05-29 06:15:10,30,success,1,4738,4738,4738,,,0,true,false,1,0,0,0,0,0,0,Public API/sitemap
-RUN003,mit_ocw,MIT OpenCourseWare,2026-05-29 06:15:10,2026-05-29 06:15:10,30,success,1,2574,2574,2574,,,0,true,false,1,0,0,0,0,0,0,Public API/sitemap
-RUN004,freecodecamp,freeCodeCamp,2026-05-29 06:15:10,2026-05-29 06:15:10,30,success,1,8979,8979,8979,,,0,true,false,1,0,0,0,0,0,0,Public API/sitemap
-RUN005,forage,Forage,2026-05-29 06:15:10,2026-05-29 06:15:10,30,success,1,295,295,295,,,0,true,false,1,0,0,0,0,0,0,Public API/sitemap
-RUN006,datacamp,DataCamp,2026-05-29 06:15:10,2026-05-29 06:15:10,30,success,1,680,680,680,,,0,true,false,1,0,0,0,0,0,0,Public API/sitemap
-RUN007,meta_coursera,Meta (via Coursera),2026-05-29 06:15:10,2026-05-29 06:15:10,30,success,1,65,65,65,,,0,true,false,1,0,0,0,0,0,0,Public API/sitemap
-RUN008,tata_strive,Tata STRIVE,2026-05-29 06:15:10,2026-05-29 06:15:10,30,success,1,36,36,36,,,0,true,false,1,0,0,0,0,0,0,Public API/sitemap
-RUN009,tcs_ion,TCS iON,2026-05-29 06:15:10,2026-05-29 06:15:10,30,success,1,84,84,84,,,0,true,false,1,0,0,0,0,0,0,Public API/sitemap
-RUN010,great_learning,Great Learning,2026-05-29 06:15:10,2026-05-29 06:15:10,30,success,1,965,965,965,,,0,true,false,1,0,0,0,0,0,0,Public API/sitemap
-RUN011,simplilearn,Simplilearn,2026-05-29 06:15:10,2026-05-29 06:15:10,30,success,1,214,214,214,,,0,true,false,1,0,0,0,0,0,0,Public API/sitemap
-RUN012,upgrad,UpGrad,2026-05-29 06:15:10,2026-05-29 06:15:10,30,success,1,42,42,42,,,0,true,false,1,0,0,0,0,0,0,Public API/sitemap
-RUN013,trailhead,Salesforce Trailhead,2026-05-29 06:15:10,2026-05-29 06:15:10,30,success,1,8156,8156,8156,,,0,true,false,1,0,0,0,0,0,0,Public API/sitemap
+RUN001,nptel,NPTEL,2026-05-29 07:23:59,2026-05-29 07:23:59,30,success,1,3488,3488,3488,,,0,true,false,1,0,0,0,0,0,0,Public API/sitemap
+RUN002,microsoft_learn,Microsoft Learn,2026-05-29 07:23:59,2026-05-29 07:23:59,30,success,1,4738,4738,4738,,,0,true,false,1,0,0,0,0,0,0,Public API/sitemap
+RUN003,mit_ocw,MIT OpenCourseWare,2026-05-29 07:23:59,2026-05-29 07:23:59,30,success,1,2574,2574,2574,,,0,true,false,1,0,0,0,0,0,0,Public API/sitemap
+RUN004,freecodecamp,freeCodeCamp,2026-05-29 07:23:59,2026-05-29 07:23:59,30,success,1,8979,8979,8979,,,0,true,false,1,0,0,0,0,0,0,Public API/sitemap
+RUN005,forage,Forage,2026-05-29 07:23:59,2026-05-29 07:23:59,30,success,1,295,295,295,,,0,true,false,1,0,0,0,0,0,0,Public API/sitemap
+RUN006,datacamp,DataCamp,2026-05-29 07:23:59,2026-05-29 07:23:59,30,success,1,680,680,680,,,0,true,false,1,0,0,0,0,0,0,Public API/sitemap
+RUN007,meta_coursera,Meta (via Coursera),2026-05-29 07:23:59,2026-05-29 07:23:59,30,success,1,65,65,65,,,0,true,false,1,0,0,0,0,0,0,Public API/sitemap
+RUN008,tata_strive,Tata STRIVE,2026-05-29 07:23:59,2026-05-29 07:23:59,30,success,1,36,36,36,,,0,true,false,1,0,0,0,0,0,0,Public API/sitemap
+RUN009,tcs_ion,TCS iON,2026-05-29 07:23:59,2026-05-29 07:23:59,30,success,1,84,84,84,,,0,true,false,1,0,0,0,0,0,0,Public API/sitemap
+RUN010,great_learning,Great Learning,2026-05-29 07:23:59,2026-05-29 07:23:59,30,success,1,965,965,965,,,0,true,false,1,0,0,0,0,0,0,Public API/sitemap
+RUN011,simplilearn,Simplilearn,2026-05-29 07:23:59,2026-05-29 07:23:59,30,success,1,214,214,214,,,0,true,false,1,0,0,0,0,0,0,Public API/sitemap
+RUN012,upgrad,UpGrad,2026-05-29 07:23:59,2026-05-29 07:23:59,30,success,1,42,42,42,,,0,true,false,1,0,0,0,0,0,0,Public API/sitemap
+RUN013,trailhead,Salesforce Trailhead,2026-05-29 07:23:59,2026-05-29 07:23:59,30,success,1,8156,8156,8156,,,0,true,false,1,0,0,0,0,0,0,Public API/sitemap

@@ -11,8 +11,8 @@ sources:
     label: freeCodeCamp
     method: github
     status: working
-    count: 8979   # after dedup & 404 cleanup
-    notes: "20 verified-working superblocks, 99% URL pass rate. See _refetch_fcc.py"
+    count: 8820   # verified active
+    notes: "8820 verified active, 159 inactive (removed curriculum pages). See _refetch_fcc.py"
 
   - key: nptel
     label: NPTEL
