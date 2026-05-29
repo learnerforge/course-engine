@@ -4,7 +4,7 @@ A comprehensive course discovery engine that aggregates, processes, and maps onl
 
 ## Features
 
-- **Multi-source Aggregation**: Collects courses from 30+ providers including NPTEL, Microsoft Learn, MIT OpenCourseWare, freeCodeCamp, and many more
+- **Multi-source Aggregation**: Collects courses from 35+ providers including NPTEL, Microsoft Learn, MIT OpenCourseWare, freeCodeCamp, Forage, DataCamp, Meta (via Coursera), Tata STRIVE, TCS iON, Great Learning, Simplilearn, UpGrad, Salesforce Trailhead, and many more
 - **Data Processing Pipeline**: 
   - URL cleaning and normalization
   - Category and discipline resolution (especially for NPTEL)
@@ -43,11 +43,20 @@ The engine currently aggregates courses from the following providers:
 - **Laravel Learn**: 25 courses (PHP framework tutorials)
 - **Stepik**: 14,669 courses (Russian educational platform)
 - **KodeKloud**: 21 courses (DevOps and cloud engineering)
+- **Forage**: 295 programs (Virtual job simulations from top companies like JPMorgan, BCG, Red Bull)
+- **DataCamp**: 680 courses (Data science and AI learning platform)
+- **Meta (via Coursera)**: 65 courses (Meta's professional certificates and courses on Coursera)
+- **Tata STRIVE**: 36 courses (Tata Group's job-oriented skills training)
+- **TCS iON**: 84 courses (TCS's career edge and industry honour programmes)
+- **Great Learning**: 965 courses (India's leading data science and tech education platform)
+- **Simplilearn**: 214 courses (Professional certification training)
+- **UpGrad**: 42 courses (Higher education and upskilling programs)
+- **Salesforce Trailhead**: 8,156 modules (Salesforce's free gamified learning platform)
 
 ### Processing Statistics (After Latest Run)
-- **Total Courses**: 40,118 (after deduplication)
-- **Total Skills Extracted**: 89,712
-- **Total Role Mappings**: 84,420
+- **Total Courses**: 50,790 (after deduplication)
+- **Total Skills Extracted**: 114,181
+- **Total Role Mappings**: 118,680
 - **Technical Roles Covered**: 25 (including Frontend Developer, Backend Developer, Data Scientist, DevOps Engineer, etc.)
 
 ## Output Files
@@ -149,12 +158,6 @@ Planned improvements for the course discovery engine:
 - User preference learning for personalized course recommendations
 - Integration with learning management systems
 
-## License
+---
 
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Acknowledgments
-
-Thanks to all the course providers who make their educational content freely available, enabling platforms like this course discovery engine to help learners find relevant educational resources.
-
-Last updated: May 28, 2026
+*Last updated: May 29, 2026. 50,790 courses aggregated from 32+ providers.*

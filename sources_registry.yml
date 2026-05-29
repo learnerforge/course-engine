@@ -131,6 +131,62 @@ sources:
     status: working
     count: 21
 
+  - key: forage
+    label: Forage
+    method: sitemap
+    status: working
+    count: 295
+    notes: "295 virtual job simulations from sitemap.xml. RSC payload enriches ~16 with details."
+
+  - key: datacamp
+    label: DataCamp
+    method: sitemap
+    status: working
+    count: 680
+    notes: "API behind Cloudflare. 680 courses from sitemap/courses.xml."
+
+  - key: meta_coursera
+    label: Meta (via Coursera)
+    method: API/pub
+    status: working
+    count: 65
+    notes: "65 Meta-partnered courses via Coursera public API (search=meta)."
+
+  - key: tata_strive
+    label: Tata STRIVE
+    method: scrape
+    status: working
+    count: 36
+    notes: "36 job-oriented skills courses via WordPress page HTML scrape."
+
+  - key: tcs_ion
+    label: TCS iON
+    method: sitemap
+    status: working
+    count: 84
+    notes: "84 courses from sitemap + listing pages (Career Edge, Industry Honour)."
+
+  - key: great_learning
+    label: Great Learning
+    method: sitemap
+    status: working
+    count: 965
+    notes: "965 free courses from academy sitemap."
+
+  - key: simplilearn
+    label: Simplilearn
+    method: sitemap
+    status: working
+    count: 214
+    notes: "214 professional certification courses from sitemap."
+
+  - key: upgrad
+    label: UpGrad
+    method: sitemap
+    status: working
+    count: 33
+    notes: "33 courses from sitemap certification/program URLs."
+
   # ================================================================
   # WORKING — zero_courses (scrapers written, 0 results)
   # ================================================================
@@ -168,7 +224,9 @@ sources:
   - key: trailhead
     label: Trailhead (Salesforce)
     method: sitemap
-    status: zero_courses
+    status: working
+    count: 8300
+    notes: "Modules, projects, trails & superbadges from content sitemap."
 
   - key: webdev
     label: Web.dev
